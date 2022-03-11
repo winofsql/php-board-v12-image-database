@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+* {
+    font-family: "ヒラギノ角ゴPro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",Verdana,Arial,Helvetica,sans-serif!important;
+}
+
+.title {
+    border: 1px solid #aaa;
+    padding: 4px;
+    margin-bottom: 6px;
+}
+
+
+.title_entry {
+    display: inline-block;
+    width: 100px;;
+}
+
+#data_head {
+    font-size: 24px;
+}
+
+.spanlink {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+/* PC 用 */
+@media screen and ( min-width:480px ) {
+
+    #data_body {
+        padding: 10px;
+    }
+
+    #data_entry {
+        margin-left: 20px;
+    }
+
+    #content {
+        margin: 26px;
+    }
+
+    input {
+        width: 400px;
+    }
+    textarea {
+        width: 500px;
+        height: 100px;
+    }
+
+    #send {
+        width: 60px;
+    }
+
+    #file {
+        width: 240px;
+    }
+    #upload {
+        width: 170px;
+    }
+
+}
+
+/* スマホ 用 */
+@media screen and ( max-width:479px ) {
+
+    input,textarea {
+        width:100%;
+
+    }
+
+    textarea {
+        height: 70px;
+    }
+}
+
