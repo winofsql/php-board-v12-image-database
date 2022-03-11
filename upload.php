@@ -1,4 +1,6 @@
 <?php
+require_once("setting.php");
+
 // キャラクタセット
 // *************************************
 header( "Content-Type: application/json; charset=utf-8" );
