@@ -107,7 +107,7 @@ $(function(){
 </head>
 
 <body>
-<div id="data_head" class="alert alert-primary">投稿一覧 (<?= $kensu ?>件)</div>
+<div id="data_head" data-kensu="<?= $kensu ?>" class="alert alert-primary">投稿一覧 (<?= $kensu ?>件)</div>
 <div id="data_body">
     <span style='color:red'>
         <?php
