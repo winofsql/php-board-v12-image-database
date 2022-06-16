@@ -6,10 +6,6 @@ header( "Content-Type: text/html; charset=utf-8" );
 require_once("model.php");
 
 // **************************************
-// 関数の定義を読み込みます
-// **************************************
-
-// **************************************
 // $_POST['send'] != "" は送信ボタンが
 // クリックされた事を示します
 // さらに、テキストエリアに何か入力され
@@ -29,18 +25,18 @@ if ( $_POST['send'] != "" ) {
 // *************************************
 // 画面
 // *************************************
-if( $_SERVER["REQUEST_METHOD"] == "GET" && $_GET["page"] != "init" ){
+if ( $_SERVER["REQUEST_METHOD"] == "GET" && $_GET["page"] != "init" ) {
     require_once("view.php");
 }
-if( $_SERVER["REQUEST_METHOD"] == "GET" && $_GET["page"] == "init" ){
+if ( $_SERVER["REQUEST_METHOD"] == "GET" && $_GET["page"] == "init" ) {
     read_data( );
     require_once("view2.php");
 }
-if( $_SERVER["REQUEST_METHOD"] == "POST" ){
+if ( $_SERVER["REQUEST_METHOD"] == "POST" ) {
     read_data( );
     require_once("view2.php");
 }
 
 
-
+//debug_print();
 ?>

@@ -43,7 +43,7 @@ SQL;
 // *************************************
 function check_post() {
 
-    file_put_contents("check_post.log", print_r($_POST,true));
+    file_put_contents("check_post.log", print_r($_POST,true) ,FILE_APPEND );
 
     global $error;
 
@@ -182,11 +182,22 @@ function read_data() {
         // 行毎に表示 HTML を作成
         // **************************************
         $log_text .= <<<LOG
-<div class='title' id="disp{$entry['row_no']}">
-<input type="button" id="delete{$entry['row_no']}" value="削除" style='float:right;width:100px;' class="btn btn-outline-dark btn-sm">
-<span class='spanlink' id='row{$entry['row_no']}'>{$entry['subject']}</span>
-<span>( {$entry['from']} : {$entry['cdate']} ) </span>
-<div class="body_text">{$entry['body']}</div></div>
+<div
+    class='title'
+    id="disp{$entry['row_no']}"
+    >
+    <input
+        type="button"
+        id="delete{$entry['row_no']}"
+        value="削除"
+        style='float:right;width:100px;'
+        class="btn btn-outline-dark btn-sm"
+        >
+    <span class='spanlink' id='row{$entry['row_no']}'>{$entry['subject']}</span>
+    <span>( {$entry['from']} : {$entry['cdate']} ) </span>
+    <div class="body_text">{$entry['body']}</div>
+</div>
+
 LOG;
 
         $kensu++;
