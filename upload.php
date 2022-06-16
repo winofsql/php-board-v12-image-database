@@ -1,14 +1,7 @@
 <?php
 require_once("setting.php");
 
-// キャラクタセット
-// *************************************
 header( "Content-Type: application/json; charset=utf-8" );
-// *************************************
-// キャッシュ無効
-// *************************************
-session_cache_limiter('nocache');
-session_start();
 
 require_once("model.php");
 
