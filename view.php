@@ -5,13 +5,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
     <title>掲示板 v12 画像名をDBに登録</title>
+
+<?php require_once("iframe-css.php") ?>
     <link rel="stylesheet" href="client.css?_=<?= time() ?>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
 
 
-<?php require_once("iframe-css.php") ?>
 
 <script>
 jQuery.isMobile = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
@@ -133,7 +134,10 @@ $( function(){
 
 <body>
 <div id="bbs">
-    <h3 class="alert alert-primary"><a href="control.php" style="color:black;">掲示板 ( MySQL )</a></h3>
+    <h3 class="alert alert-primary">
+        <a href="control.php" style="color:black;">掲示板 ( MySQL )</a>
+        <a href=".." style="float:right;text-decoration:none;">📂</a>
+    </h3>
     <div id="content"
         >
         <form action=""
