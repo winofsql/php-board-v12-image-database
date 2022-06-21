@@ -99,7 +99,7 @@ $( function(){
             console.log( "data:" + JSON.stringify(data, null, "    ") );
             
             if ( data.image.error != 0 ) {
-                alert(data.image.result);
+                toastr.error(data.image.result);
             }
 
             $("#subject").val("");
