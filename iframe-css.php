@@ -10,7 +10,7 @@ body {
 }
 #bbs {
     width: 100%;
-    height: <?= $view_head_height ?>px;
+    /* height: <?= $view_head_height ?>px; */
     background-color: #fff;
 }
 #extend {
@@ -18,7 +18,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: calc( 100% - 4px );
-    height: calc( 100% - <?= $view_head_height ?>px - 2px );
+    /* height: calc( 100% - <?= $view_head_height ?>px - 2px ); */
     border: solid 2px #c0c0c0;
 }
 
@@ -26,11 +26,11 @@ body {
 @media screen and ( min-width:480px ) {
 
 #bbs {
-    height: <?= $view_head_height - 20 ?>px;
+    height: <?= $view_head_height ?>px;
 }
 
 #extend {
-    height: calc( 100% - <?= $view_head_height + 20 ?>px - 2px );
+    height: calc( 100% - <?= $view_head_height ?>px - 2px );
 }
 
 }
