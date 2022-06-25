@@ -102,6 +102,26 @@ $( function(){
 
     });
 
+    // キーボードのキーが押された場合
+    $("#text").keydown(function( e ){
+
+        var code = e.keyCode;
+        console.log(code + " が押されました" );
+
+        // F2 キー
+        if ( code == 113 ) {
+            var text = $(this).val();
+            // IFRAME 内のテキストを検索
+            $("#extend").contents().find(".body_text").each( function( index, element ){
+                var target = $(this).text();
+                if ( target.indexOf(text) != -1 ) {
+                    $("#extend").contents().scrollTop( $(element).position().top );
+                    // ループ終了
+                    return false;
+                }
+            });
+        }
+    });
 
 });
 
