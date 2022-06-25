@@ -36,7 +36,7 @@ $(function(){
         var target = $(this)
         // parent.$ : 親ウインドウに対してダイアログを表示
         // modalDialog : 親ウインドウのオブジェクトを後で操作する為に保存
-        var modalDialog = parent.$( "#dialog-message" ).dialog({
+        var modalDialog = parent.$( "#dialog-message-delete" ).dialog({
             modal: true,
             title: "ダイアログのタイトルです",
             close: function() {

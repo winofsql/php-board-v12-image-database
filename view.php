@@ -144,6 +144,9 @@ $( function(){
 
 <iframe id="extend" src="control.php?page=init" name="myframe"></iframe>
 
+<div id="dialog-message-delete" style='display:none;'>
+削除してもよろしいですか?
+</div>
 <div id="dialog-message" style='display:none;'>
 アップロードを開始してもよろしいですか?
 </div>
