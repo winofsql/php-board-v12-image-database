@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="client.css?_=<?= time() ?>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="model.js?_=<?= time() ?>"></script>
     
 
 <script>
@@ -48,55 +49,16 @@ $(function(){
         var subject = $(this).text();
         parent.$("#subject").val(subject);
         
+        // nextAll() : 同一レベル要素を現在位置より後を全て取得
+        // 0 : 名前と日付
         var name = $(this).nextAll().eq(0).text();
         name = name.replace(/[ \(]/g,"");
         var awork = name.split(":");
         parent.$("#name").val(awork[0]);
 
+        // 1 : 本文
         var text = $(this).nextAll().eq(1).text();
         parent.$("#text").val(text);
-    });
-
-    $(".btn-outline-dark").on("click",function(){
-
-        if ( !confirm("削除してもよろしいですか?") ) {
-            return;
-        }
-
-        var id = $(this).prop("id");
-        id = id.replace(/delete/g,"");
-
-        var formData = new FormData();
-
-        formData.append("id", id );
-
-        $.ajax({
-            url: "./delete.php",
-            type: "POST",
-            data: formData,
-            processData: false,  // jQuery がデータを処理しないよう指定
-            contentType: false   // jQuery が contentType を設定しないよう指定
-        })
-        .done(function( data, textStatus ){
-            console.log( "status:" + textStatus );
-            console.log( "data:" + JSON.stringify(data, null, "    ") );
-
-            var kensu = parseInt( $("#data_head").data("kensu") );
-            kensu--;
-            $("#data_head").data("kensu", kensu);
-            $("#data_head").text( "投稿一覧 (" + kensu + "件)" );
-            
-            $('#disp' + data.id).fadeOut(800);
-
-        })
-        .fail(function(jqXHR, textStatus, errorThrown ){
-            console.log( "status:" + textStatus );
-            console.log( "errorThrown:" + errorThrown );
-        })
-        .always(function() {
-
-        })
-        ;
     });
 
     <?= $clear ?>
